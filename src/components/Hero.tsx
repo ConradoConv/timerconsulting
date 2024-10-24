@@ -4,7 +4,8 @@ const Hero = () => {
   return (
     <div className="relative pt-16 pb-32 flex content-center items-center justify-center min-h-screen">
       <div className="absolute top-0 w-full h-full bg-center bg-cover" style={{
-        backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/hero-bg.jpg')"
+        backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('/hero-bg.jpg')",
+        filter: "grayscale(100%)"
       }}>
       </div>
       <div className="container relative mx-auto">
@@ -14,11 +15,11 @@ const Hero = () => {
               <h1 className="text-5xl font-semibold leading-tight">
                 Transformando Ideias em Negócios Sólidos
               </h1>
-              <p className="mt-4 text-lg">
+              <p className="mt-4 text-lg text-gray-300">
                 Consultoria jurídica e empresarial especializada em estruturação de negócios, 
                 compliance e governança corporativa.
               </p>
-              <Button size="lg" className="mt-8">
+              <Button variant="outline" size="lg" className="mt-8 text-white border-white hover:bg-white hover:text-gray-900">
                 Conheça Nossos Serviços
               </Button>
             </div>
