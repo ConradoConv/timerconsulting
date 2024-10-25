@@ -15,11 +15,11 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gray-50">
+    <section id="contact" className="py-20 bg-gray-900 text-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">Entre em Contato</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-gray-300 max-w-2xl mx-auto">
             Estamos prontos para ajudar sua empresa a crescer com segurança jurídica e eficiência
           </p>
         </div>
@@ -27,26 +27,35 @@ const Contact = () => {
         <div className="max-w-2xl mx-auto">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <Input placeholder="Nome" required />
-              <Input type="email" placeholder="Email" required />
+              <Input placeholder="Nome" required className="bg-white/10 border-white/20 text-white placeholder:text-gray-400" />
+              <Input type="email" placeholder="Email" required className="bg-white/10 border-white/20 text-white placeholder:text-gray-400" />
             </div>
-            <Input placeholder="Assunto" required />
-            <Textarea placeholder="Mensagem" className="h-32" required />
-            <Button type="submit" className="w-full">Enviar Mensagem</Button>
+            <Input placeholder="Assunto" required className="bg-white/10 border-white/20 text-white placeholder:text-gray-400" />
+            <Textarea 
+              placeholder="Mensagem" 
+              className="h-32 bg-white/10 border-white/20 text-white placeholder:text-gray-400" 
+              required 
+            />
+            <Button 
+              type="submit" 
+              className="w-full bg-white text-gray-900 hover:bg-gray-200 font-semibold"
+            >
+              Enviar Mensagem
+            </Button>
           </form>
 
           <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
             <div>
               <h3 className="font-semibold mb-2">Endereço</h3>
-              <p className="text-gray-600">São Paulo, SP</p>
+              <p className="text-gray-300">São Paulo, SP</p>
             </div>
             <div>
               <h3 className="font-semibold mb-2">Email</h3>
-              <p className="text-gray-600">contato@timerconsultoria.com.br</p>
+              <p className="text-gray-300">contato@timerconsultoria.com.br</p>
             </div>
             <div>
               <h3 className="font-semibold mb-2">Telefone</h3>
-              <p className="text-gray-600">(11) 99999-9999</p>
+              <p className="text-gray-300">(11) 99999-9999</p>
             </div>
           </div>
         </div>
