@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <img src="/src/logo timer.png" alt="Timer Consulting" className="h-12 mb-4" />
+            <img src="/src/Design sem nome.png" alt="Timer Consulting" className="h-12 mb-4" />
             <p className="text-gray-400">
               Transformando desafios em oportunidades com soluções empresariais inovadoras.
             </p>
