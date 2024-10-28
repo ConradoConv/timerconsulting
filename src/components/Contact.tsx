@@ -15,12 +15,12 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gray-900 text-white">
+    <section id="contact" className="py-20 bg-black text-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">Entre em Contato</h2>
           <p className="text-gray-300 max-w-2xl mx-auto">
-            Estamos prontos para ajudar sua empresa a crescer com segurança jurídica e eficiência
+            Estamos prontos para ajudar seu negócio a alcançar novos patamares
           </p>
         </div>
 
@@ -38,7 +38,7 @@ const Contact = () => {
             />
             <Button 
               type="submit" 
-              className="w-full bg-white text-gray-900 hover:bg-gray-200 font-semibold"
+              className="w-full bg-white text-black hover:bg-gray-200 font-semibold"
             >
               Enviar Mensagem
             </Button>
@@ -51,7 +51,7 @@ const Contact = () => {
             </div>
             <div>
               <h3 className="font-semibold mb-2">Email</h3>
-              <p className="text-gray-300">contato@timerconsultoria.com.br</p>
+              <p className="text-gray-300">contato@timerconsulting.com.br</p>
             </div>
             <div>
               <h3 className="font-semibold mb-2">Telefone</h3>
