@@ -9,8 +9,9 @@ const Navbar = () => {
     <nav className="fixed w-full bg-black/90 backdrop-blur-md z-50 shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20 items-center">
-          <div className="flex-shrink-0">
-            <h1 className="text-2xl font-bold text-white">Timer Consulting</h1>
+          <div className="flex items-center space-x-4">
+            <img src="/src/Design sem nome.png" alt="Timer Consulting" className="h-12" />
+            <h1 className="text-2xl font-bold text-white md:hidden lg:block">Timer Consulting</h1>
           </div>
           
           <div className="hidden md:flex items-center space-x-8">
