@@ -10,11 +10,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20 items-center">
           <div className="flex-shrink-0">
-            <img 
-              src="/timer-logo.png" 
-              alt="Timer Consulting" 
-              className="h-12 w-auto" 
-            />
+            <h1 className="text-2xl font-bold text-white">Timer Consulting</h1>
           </div>
           
           <div className="hidden md:flex items-center space-x-8">
