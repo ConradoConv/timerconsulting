@@ -7,7 +7,7 @@ const About = () => {
         <div className="flex flex-wrap items-center">
           <div className="w-full md:w-1/2 px-4 mb-8 md:mb-0">
             <img 
-              src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&q=80" 
+              src="/src/timer imagem sobre.jpg"
               alt="Timer Consulting Team" 
               className="rounded-lg shadow-xl w-full h-[500px] object-cover"
             />
