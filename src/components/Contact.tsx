@@ -51,7 +51,7 @@ const Contact = () => {
           sector: formData.sector,
           message: formData.message,
         },
-        'YOUR_PUBLIC_KEY' // You'll need to replace this with your EmailJS public key
+        'D_RnWlH_CGPwVcM4e' // EmailJS Public Key
       );
 
       toast({
