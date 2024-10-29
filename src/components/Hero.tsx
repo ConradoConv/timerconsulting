@@ -20,27 +20,6 @@ const Hero = () => {
               <p className="mt-4 text-lg md:text-xl text-gray-300">
                 A Timer Consultoria combina inovação, expertise jurídica e uma abordagem consultiva para impulsionar empresas com segurança e eficiência.
               </p>
-              
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-12">
-                <div className="p-6 border border-white/20 rounded-lg backdrop-blur-sm">
-                  <h3 className="text-lg font-semibold mb-2">Missão</h3>
-                  <p className="text-sm text-gray-300">
-                    Ser a consultoria mais confiável para estruturação de negócios e serviços jurídicos no Brasil.
-                  </p>
-                </div>
-                <div className="p-6 border border-white/20 rounded-lg backdrop-blur-sm">
-                  <h3 className="text-lg font-semibold mb-2">Visão</h3>
-                  <p className="text-sm text-gray-300">
-                    Até 2028, ser referência em inovação jurídica e empresarial no Brasil.
-                  </p>
-                </div>
-                <div className="p-6 border border-white/20 rounded-lg backdrop-blur-sm">
-                  <h3 className="text-lg font-semibold mb-2">Valores</h3>
-                  <p className="text-sm text-gray-300">
-                    Transparência, ética, resiliência e foco no cliente.
-                  </p>
-                </div>
-              </div>
 
               <div className="mt-10">
                 <Button 
