@@ -2,6 +2,13 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/components/ui/use-toast";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -13,6 +20,22 @@ const Contact = () => {
       description: "Entraremos em contato em breve.",
     });
   };
+
+  const sectors = [
+    "Construção Civil",
+    "Fintechs",
+    "Meios de Pagamento",
+    "Equipamentos Eletrônicos",
+    "Indústrias",
+    "Tecnologia",
+    "Varejo",
+    "Saúde",
+    "Educação",
+    "Serviços Financeiros",
+    "Logística",
+    "E-commerce",
+    "Outros"
+  ];
 
   return (
     <section id="contact" className="py-20 bg-black text-white">
@@ -27,10 +50,39 @@ const Contact = () => {
         <div className="max-w-2xl mx-auto">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <Input placeholder="Nome" required className="bg-white/10 border-white/20 text-white placeholder:text-gray-400" />
-              <Input type="email" placeholder="Email" required className="bg-white/10 border-white/20 text-white placeholder:text-gray-400" />
+              <Input 
+                placeholder="Nome" 
+                required 
+                className="bg-white/10 border-white/20 text-white placeholder:text-gray-400" 
+              />
+              <Input 
+                type="email" 
+                placeholder="Email" 
+                required 
+                className="bg-white/10 border-white/20 text-white placeholder:text-gray-400" 
+              />
             </div>
-            <Input placeholder="Assunto" required className="bg-white/10 border-white/20 text-white placeholder:text-gray-400" />
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <Input 
+                placeholder="Nome da Empresa" 
+                required 
+                className="bg-white/10 border-white/20 text-white placeholder:text-gray-400" 
+              />
+              <Select>
+                <SelectTrigger className="bg-white/10 border-white/20 text-white">
+                  <SelectValue placeholder="Selecione o setor" />
+                </SelectTrigger>
+                <SelectContent>
+                  {sectors.map((sector) => (
+                    <SelectItem key={sector} value={sector.toLowerCase()}>
+                      {sector}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+
             <Textarea 
               placeholder="Mensagem" 
               className="h-32 bg-white/10 border-white/20 text-white placeholder:text-gray-400" 
