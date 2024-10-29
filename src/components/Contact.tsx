@@ -21,6 +21,7 @@ const Contact = () => {
     sector: '',
     message: ''
   });
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -67,6 +68,7 @@ const Contact = () => {
           sector: '',
           message: ''
         });
+        setIsSubmitted(true);
       } else {
         throw new Error('Failed to send email');
       }
@@ -95,6 +97,21 @@ const Contact = () => {
     "E-commerce",
     "Outros"
   ];
+
+  if (isSubmitted) {
+    return (
+      <div className="text-center py-20">
+        <h2 className="text-3xl font-bold mb-4">Obrigado pelo seu contato!</h2>
+        <p className="text-xl">Sua mensagem foi enviada com sucesso. Entraremos em contato em breve.</p>
+        <Button 
+          onClick={() => setIsSubmitted(false)} 
+          className="mt-8 bg-white text-black hover:bg-gray-200 font-semibold"
+        >
+          Enviar outra mensagem
+        </Button>
+      </div>
+    );
+  }
 
   return (
     <section id="contact" className="py-20 bg-black text-white">
