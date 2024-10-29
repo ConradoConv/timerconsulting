@@ -1,5 +1,5 @@
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Scale, Shield, FileText, Building2, Users, LineChart } from "lucide-react";
+import { Scale, Map, FileText, Building2, Users, LineChart } from "lucide-react";
 
 const services = [
   {
@@ -13,9 +13,9 @@ const services = [
     icon: Building2
   },
   {
-    title: "Compliance",
-    description: "Programas de conformidade e gestão de riscos corporativos",
-    icon: Shield
+    title: "Mapeamento de Processos",
+    description: "Mapeamento e otimização de processos utilizando notação BPMN",
+    icon: Map
   },
   {
     title: "Governança Corporativa",
