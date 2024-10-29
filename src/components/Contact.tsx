@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/components/ui/use-toast";
+import emailjs from '@emailjs/browser';
 import {
   Select,
   SelectContent,
@@ -9,16 +10,70 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { useState } from "react";
 
 const Contact = () => {
   const { toast } = useToast();
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    company: '',
+    sector: '',
+    message: ''
+  });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    toast({
-      title: "Mensagem enviada!",
-      description: "Entraremos em contato em breve.",
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
     });
+  };
+
+  const handleSectorChange = (value: string) => {
+    setFormData({
+      ...formData,
+      sector: value
+    });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    try {
+      await emailjs.send(
+        'YOUR_SERVICE_ID', // You'll need to replace this with your EmailJS service ID
+        'YOUR_TEMPLATE_ID', // You'll need to replace this with your EmailJS template ID
+        {
+          to_email: 'conrado@timerbusiness.com.br',
+          from_name: formData.name,
+          from_email: formData.email,
+          company: formData.company,
+          sector: formData.sector,
+          message: formData.message,
+        },
+        'YOUR_PUBLIC_KEY' // You'll need to replace this with your EmailJS public key
+      );
+
+      toast({
+        title: "Mensagem enviada!",
+        description: "Entraremos em contato em breve.",
+      });
+
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        company: '',
+        sector: '',
+        message: ''
+      });
+    } catch (error) {
+      toast({
+        title: "Erro ao enviar mensagem",
+        description: "Por favor, tente novamente mais tarde.",
+        variant: "destructive"
+      });
+    }
   };
 
   const sectors = [
@@ -51,11 +106,17 @@ const Contact = () => {
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <Input 
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
                 placeholder="Nome" 
                 required 
                 className="bg-white/10 border-white/20 text-white placeholder:text-gray-400" 
               />
               <Input 
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
                 type="email" 
                 placeholder="Email" 
                 required 
@@ -65,11 +126,14 @@ const Contact = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <Input 
+                name="company"
+                value={formData.company}
+                onChange={handleChange}
                 placeholder="Nome da Empresa" 
                 required 
                 className="bg-white/10 border-white/20 text-white placeholder:text-gray-400" 
               />
-              <Select>
+              <Select onValueChange={handleSectorChange} value={formData.sector}>
                 <SelectTrigger className="bg-white/10 border-white/20 text-white">
                   <SelectValue placeholder="Selecione o setor" />
                 </SelectTrigger>
@@ -84,6 +148,9 @@ const Contact = () => {
             </div>
 
             <Textarea 
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
               placeholder="Mensagem" 
               className="h-32 bg-white/10 border-white/20 text-white placeholder:text-gray-400" 
               required 
