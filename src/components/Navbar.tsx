@@ -19,7 +19,7 @@ const Navbar = () => {
             <a href="#contact" className="text-white hover:text-gray-300 transition-colors">Contato</a>
             <Button 
               variant="outline"
-              className="border-white bg-white text-black hover:bg-white hover:text-black transition-colors font-medium"
+              className="border-white bg-transparent text-white hover:bg-white hover:text-black transition-colors font-medium"
             >
               Agende uma Consulta
             </Button>
@@ -44,7 +44,7 @@ const Navbar = () => {
             <a href="#contact" className="block px-3 py-2 text-white hover:text-gray-300 transition-colors">Contato</a>
             <Button 
               variant="outline"
-              className="w-full mt-2 border-white bg-white text-black hover:bg-white hover:text-black transition-colors font-medium"
+              className="w-full mt-2 border-white bg-transparent text-white hover:bg-white hover:text-black transition-colors font-medium"
             >
               Agende uma Consulta
             </Button>
