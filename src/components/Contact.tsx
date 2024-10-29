@@ -45,9 +45,9 @@ const Contact = () => {
         'template_0aar80i',
         {
           from_name: formData.name,
+          from_empresa: formData.company,
+          from_setor: formData.sector,
           from_email: formData.email,
-          company: formData.company,
-          sector: formData.sector,
           message: formData.message,
           to_email: 'conrado@timerbusiness.com.br',
         },
