@@ -40,7 +40,7 @@ const Contact = () => {
     e.preventDefault();
 
     try {
-      await emailjs.send(
+      const result = await emailjs.send(
         'service_5hcq1xd',
         'template_0aar80i',
         {
@@ -54,22 +54,27 @@ const Contact = () => {
         'D_RnWlH_CGPwVcM4e'
       );
 
-      toast({
-        title: "Mensagem enviada!",
-        description: "Entraremos em contato em breve.",
-      });
+      if (result.text === 'OK') {
+        toast({
+          title: "Mensagem enviada!",
+          description: "Entraremos em contato em breve.",
+        });
 
-      setFormData({
-        name: '',
-        email: '',
-        company: '',
-        sector: '',
-        message: ''
-      });
+        setFormData({
+          name: '',
+          email: '',
+          company: '',
+          sector: '',
+          message: ''
+        });
+      } else {
+        throw new Error('Failed to send email');
+      }
     } catch (error) {
+      console.error('Error sending email:', error);
       toast({
         title: "Erro ao enviar mensagem",
-        description: "Por favor, tente novamente mais tarde.",
+        description: "Houve um problema ao enviar sua mensagem. Por favor, tente novamente mais tarde ou entre em contato conosco diretamente.",
         variant: "destructive"
       });
     }
