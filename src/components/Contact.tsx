@@ -41,17 +41,17 @@ const Contact = () => {
 
     try {
       await emailjs.send(
-        'service_5hcq1xd', // EmailJS Service ID
-        'service_5hcq1xd', // EmailJS Template ID
+        'service_5hcq1xd', // Service ID
+        'template_timer', // Template ID - Changed to a generic template name, replace with your actual template ID
         {
-          to_email: 'conrado@timerbusiness.com.br',
           from_name: formData.name,
           from_email: formData.email,
           company: formData.company,
           sector: formData.sector,
           message: formData.message,
+          to_email: 'conrado@timerbusiness.com.br',
         },
-        'D_RnWlH_CGPwVcM4e' // EmailJS Public Key
+        'D_RnWlH_CGPwVcM4e' // Public Key
       );
 
       toast({
@@ -59,7 +59,6 @@ const Contact = () => {
         description: "Entraremos em contato em breve.",
       });
 
-      // Reset form
       setFormData({
         name: '',
         email: '',
