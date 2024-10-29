@@ -41,8 +41,8 @@ const Contact = () => {
 
     try {
       await emailjs.send(
-        'service_5hcq1xd', // Service ID
-        'template_timer', // Template ID - Changed to a generic template name, replace with your actual template ID
+        'service_5hcq1xd',
+        'template_0aar80i',
         {
           from_name: formData.name,
           from_email: formData.email,
@@ -51,7 +51,7 @@ const Contact = () => {
           message: formData.message,
           to_email: 'conrado@timerbusiness.com.br',
         },
-        'D_RnWlH_CGPwVcM4e' // Public Key
+        'D_RnWlH_CGPwVcM4e'
       );
 
       toast({
