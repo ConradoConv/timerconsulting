@@ -48,9 +48,12 @@ const ContactForm = ({ className = "", showContactInfo = true }: ContactFormProp
     e.preventDefault();
 
     try {
+      // Initialize EmailJS with your public key
+      emailjs.init("D_RnWlH_CGPwVcM4e");
+
       const result = await emailjs.send(
-        'service_5hcq1xd',
-        'template_0aar80i',
+        'service_5hcq1xd', // Your EmailJS service ID
+        'template_0aar80i', // Your EmailJS template ID
         {
           from_name: formData.name,
           from_empresa: formData.company,
@@ -58,8 +61,7 @@ const ContactForm = ({ className = "", showContactInfo = true }: ContactFormProp
           from_email: formData.email,
           message: formData.message,
           to_email: 'conrado@timerbusiness.com.br',
-        },
-        'D_RnWlH_CGPwVcM4e'
+        }
       );
 
       if (result.text === 'OK') {
