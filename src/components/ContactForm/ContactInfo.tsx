@@ -10,7 +10,7 @@ const ContactInfo = () => (
     </div>
     <div>
       <h3 className="font-semibold mb-2">Telefone</h3>
-      <p className="text-gray-300">(11) 99999-9999</p>
+      <p className="text-gray-300">(15) 99733-2885</p>
     </div>
   </div>
 );
