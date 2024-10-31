@@ -5,7 +5,7 @@ const Values = () => {
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold mb-4">Nossa Essência</h2>
           <p className="text-xl text-gray-300">
-            Compromisso com a excelência e segurança jurídica
+            Compromisso com a excelência e segurança jurídica.
           </p>
         </div>
         
