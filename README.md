@@ -2,7 +2,7 @@
 
 ## Project info
 
-**URL**: https://run.gptengineer.app/projects/25c90bae-3b4a-4649-9ade-09f234e18b67/improve
+**URL**: https://gptengineer.app/projects/25c90bae-3b4a-4649-9ade-09f234e18b67
 
 ## How can I edit this code?
 
@@ -10,7 +10,7 @@ There are several ways of editing your application.
 
 **Use GPT Engineer**
 
-Simply visit the GPT Engineer project at [GPT Engineer](https://gptengineer.app/projects/25c90bae-3b4a-4649-9ade-09f234e18b67/improve) and start prompting.
+Simply visit the GPT Engineer project at [GPT Engineer](https://gptengineer.app/projects/25c90bae-3b4a-4649-9ade-09f234e18b67) and start prompting.
 
 Changes made via gptengineer.app will be committed automatically to this repo.
 
@@ -64,7 +64,7 @@ This project is built with .
 
 All GPT Engineer projects can be deployed directly via the GPT Engineer app.
 
-Simply visit your project at [GPT Engineer](https://gptengineer.app/projects/25c90bae-3b4a-4649-9ade-09f234e18b67/improve) and click on Share -> Publish.
+Simply visit your project at [GPT Engineer](https://gptengineer.app/projects/25c90bae-3b4a-4649-9ade-09f234e18b67) and click on Share -> Publish.
 
 ## I want to use a custom domain - is that possible?
 
