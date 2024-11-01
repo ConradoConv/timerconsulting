@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Linkedin } from "lucide-react";
+import { MessageSquare } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -31,16 +31,20 @@ const Footer = () => {
           </div>
           
           <div>
-            <h3 className="text-lg font-semibold mb-4">Redes Sociais</h3>
-            <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Instagram className="h-6 w-6" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Linkedin className="h-6 w-6" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Facebook className="h-6 w-6" />
+            <h3 className="text-lg font-semibold mb-4">Contato</h3>
+            <ul className="space-y-2">
+              <li className="text-gray-400">R. André Fernandes, 205A - Itaim Bibi, São Paulo - SP</li>
+              <li className="text-gray-400">(11) 96982-9386</li>
+              <li className="text-gray-400">contato@timerbusiness.com.br</li>
+            </ul>
+            <div className="flex mt-4">
+              <a 
+                href="https://wa.me/5511969829386" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-gray-400 hover:text-white transition-colors"
+              >
+                <MessageSquare className="h-6 w-6" />
               </a>
             </div>
           </div>
