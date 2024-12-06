@@ -37,6 +37,6 @@ jobs:
           server: ${{ secrets.HOST }}
           username: ${{ secrets.USER }}
           password: ${{ secrets.PASS }}
-          local-dir: ./dist/
-          server-dir: ./
+          local-dir: ./dist/ # Certifique-se de que esta pasta existe
+          server-dir: /public_html/ # Ajuste para o caminho correto no servidor
           dangerous-clean-slate: true
