@@ -10,7 +10,7 @@ There are several ways of editing your application.
 
 **Use GPT Engineer**
 
-Simply visit the GPT Engineer project at [GPT Engineer](Insira aqui a nova URL do seu projeto GPT Engineer) and start prompting.
+Simply visit the GPT Engineer project at [GPT Engineer](Insira aqui a nova URL do seu projeto GPT Engineer) and start prompting
 
 Changes made via gptengineer.app will be committed automatically to this repo.
 
