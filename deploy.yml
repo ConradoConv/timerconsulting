@@ -1,21 +1,41 @@
-name: Deploy Code to Release Branch 🚀
+name: Deploy Site
+
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - main
+  workflow_dispatch: # Permite execução manual pelo GitHub Web
 
 jobs:
-  build:
-    name: Push to Release Branch
+  deploy:
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
 
-      # Workflow dispatch event that pushes the current version to the release branch.
-      # From here the secondary production deployment workflow will trigger to build the dependencies.
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          branch: releases/v4
-          folder: .
-          clean: false
-          single-commit: true
+    steps:
+      # Checkout do código do repositório
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      # Configuração do token para autenticação (usando o token fornecido)
+      - name: Configure Git credentials
+        run: |
+          git config --global user.email "your-email@example.com"
+          git config --global user.name "ConradoConv"
+          echo "https://${{ secrets.GITHUB_TOKEN }}" > ~/.git-credentials
+          git config --global credential.helper store
+
+      # Fazer o build do projeto, se necessário (ajuste conforme sua stack)
+      - name: Build project
+        run: |
+          echo "Building project (ajuste este passo se necessário)"
+          # Exemplos de comando de build:
+          # npm install && npm run build
+          # ou, se não precisar de build:
+          # echo "Nada para construir aqui."
+
+      # Deploy para o diretório remoto
+      - name: Deploy site
+        run: |
+          echo "Iniciando o deploy"
+          git add .
+          git commit -m "Deploy automático via GitHub Actions"
+          git push https://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@github.com/ConradoConv/timerconsulting.git main
