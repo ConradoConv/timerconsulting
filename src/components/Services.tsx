@@ -31,7 +31,7 @@ const services = [
     title: "Consultoria Jurídica",
     description: "Assessoria legal estratégica para proteger e impulsionar seu negócio",
     icon: Scale,
-    path: "/legal-consulting"
+    path: "/business-consulting"  // Mudei o path para /business-consulting
   },
   {
     title: "Gestão Estratégica",
