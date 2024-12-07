@@ -2,15 +2,30 @@ import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import ConsultationModal from "./ConsultationModal";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleNavigation = (section: string) => {
-    navigate(`/#${section}`);
+    if (location.pathname !== '/') {
+      navigate('/');
+      // Aguarda a navegação ser concluída antes de rolar
+      setTimeout(() => {
+        const element = document.getElementById(section);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      const element = document.getElementById(section);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
   };
 
   return (
@@ -22,7 +37,10 @@ const Navbar = () => {
               <h1 
                 className="text-2xl font-bold text-white cursor-pointer" 
                 style={{ fontFamily: 'Lora, serif' }}
-                onClick={() => navigate('/')}
+                onClick={() => {
+                  navigate('/');
+                  window.scrollTo(0, 0);
+                }}
               >
                 TIMER CONSULTING
               </h1>
