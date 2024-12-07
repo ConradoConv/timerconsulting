@@ -1,6 +1,7 @@
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Scale, Map, CreditCard, Building2, Users, LineChart } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 const services = [
   {
@@ -46,6 +47,7 @@ const Services = () => {
 
   const handleServiceClick = (path: string) => {
     navigate(path);
+    window.scrollTo(0, 0);
   };
 
   return (
